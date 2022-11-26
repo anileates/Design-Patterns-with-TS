@@ -8,7 +8,7 @@ class GoogleDriveAdapter implements IDrive {
     download(name: string): MyFile {
         /**
          * Here we can do some logic to adapt the Google Drive API to our app.
-         * For example, we can download the file from Google Drive and convert the it to .xpdf format.
+         * For example, we can download the file from Google Drive and convert it to .xpdf format.
          */
         
         let file = this.googleDrive.download(name);
