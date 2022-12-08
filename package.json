@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/readline-sync": "^1.4.4",
+    "chalk": "^4.1.2",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-import IPath from "./file.interface";
+import IPath from "./path.interface";
 
 class File implements IPath {
     constructor(public fileName: string, public fileType: string, private fileSize: number) { }
