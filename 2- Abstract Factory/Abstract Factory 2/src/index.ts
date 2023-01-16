@@ -12,16 +12,18 @@ class Main {
     
         let msiGpu: MsiGPU = msiFactory.createGPU();
         msiGpu.renderView();
+
         let msiMonitor: MsiMonitor = msiFactory.createMonitor();
         msiMonitor.displayView();
 
         console.log('\n-----------------\n');
-
+        console.log('\n-----------------\n');
 
         let asusFactory: IFactory = new AsusFactory();
 
         let asusGpu: AsusGPU = asusFactory.createGPU();
         asusGpu.renderView();
+
         let asusMonitor: AsusMonitor = asusFactory.createMonitor();
         asusMonitor.displayView();
     }
