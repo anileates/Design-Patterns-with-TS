@@ -3,11 +3,12 @@
  * And this is the native Google Drive API.
  */
 
+import IGoogleDrive from "../interface/googleDrive.interface";
 import MyFile from "./myFile";
 
-class GoogleDrive {
+class GoogleDrive implements IGoogleDrive {
     // And lets say Google streams files in `pdf` format
-    download(fileName: string): MyFile {
+    downloadFromGoogleDrive(fileName: string): MyFile {
         return new MyFile(fileName, 'pdf');
     }
 }

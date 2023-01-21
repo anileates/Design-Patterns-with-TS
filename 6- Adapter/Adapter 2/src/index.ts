@@ -11,16 +11,15 @@ class Main {
         const file: MyFile = myDrive.download("File 1");
         
         let googleDrive = new GoogleDrive();
-        const fileWithOutAdapter = googleDrive.download("File 2");
+        const filePDF = googleDrive.downloadFromGoogleDrive("File 2");
 
-        let googleDriveAdapter = new GoogleDriveAdapter(googleDrive);
+        let googleDriveAdapter: IDrive = new GoogleDriveAdapter(googleDrive);
         const fileWithAdapter = googleDriveAdapter.download("File 3");
-        
         
         let fileEditor = new FileEditor();
         fileEditor.openFile(file);
         fileEditor.openFile(fileWithAdapter);
-        fileEditor.openFile(fileWithOutAdapter); // Can not open file in .pdf format
+        fileEditor.openFile(filePDF); // Can not open file in .pdf format
     }
 }
 
