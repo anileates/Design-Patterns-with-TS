@@ -9,11 +9,12 @@ class RoleCheckHandler extends BaseHandler {
         super();
     }
 
+    // If the user role is allowed, the handler will return true.
     public handle(username: string, password: string): boolean {
         const user = this.dbService.getUserByUsername(username);
         if(user !== null && this.allowedRoles.includes(user.role)) {
             console.log(chalk.green("User role is allowed for user " + username.toUpperCase()));
-            return true;
+            return this.handleNext(username, password);
         }
 
         console.log(chalk.red("User role is not allowed for user " + username.toUpperCase()));

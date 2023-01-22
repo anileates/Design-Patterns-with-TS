@@ -6,9 +6,11 @@ abstract class BaseHandler {
         return this.nextHandler;
     }
 
+    // Each handler has its own logic.
     public abstract handle(username: string, password: string): boolean;
 
     protected handleNext(username: string, password: string): boolean {
+        // If there is no next handler, return true.
         if (!this.nextHandler) {
             return true;
         }
