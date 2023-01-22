@@ -2,6 +2,13 @@ import RealVideoDownloader from "./realDownloader.model";
 import IVideoDownloader from "./videoDownloader.interface";
 const chalk = require('chalk');
 
+/**
+ * ProxyDownloader is a wrapper around RealDownloader. 
+ * It checks the download count of a video. And if the video has been downloaded more than 3 times, it caches the video.
+ * And returns the video from cache for future requests.
+ * 
+ * * This is how a proxy works. It acts as a wrapper around the real service. And it adds some additional functionality.
+ */
 class ProxyVideoDownloader implements IVideoDownloader {
     private realVideoDownlaoder: IVideoDownloader;
     private videoDownloadCount: Map<string, number> = new Map<string, number>();
@@ -13,6 +20,7 @@ class ProxyVideoDownloader implements IVideoDownloader {
     }
 
     public getVideo(url: string) {
+        // If the requested video was cached before, then return the video from cache
         if (this.cachedVideos.includes(url)) {
             console.log(`${chalk.green('Proxy:')} Getting the video from cache`);
             return;
@@ -26,7 +34,7 @@ class ProxyVideoDownloader implements IVideoDownloader {
         this.videoDownloadCount.set(url, downloadCount);
 
         if (downloadCount == 3) {
-            console.log(`${chalk.green('Proxy:')} Video downloaded 3 times. Caching the video for future use.`);
+            console.log(`${chalk.green('Proxy:')} Video has been downloaded 3 times. Caching the video for future use.`);
             this.cachedVideos.push(url);
         }
     }
