@@ -1,6 +1,7 @@
-import IPath from "./file.interface";
+import IPath from "./path.interface";
 
 class Folder implements IPath {
+    // A folder may have files or other folders.
     private files: IPath[] = [];
 
     constructor(public folderName: string) { }
@@ -24,6 +25,7 @@ class Folder implements IPath {
         this.files.forEach(file => {
             size += file.getSize();
         });
+        
         return size;
     }
 }
