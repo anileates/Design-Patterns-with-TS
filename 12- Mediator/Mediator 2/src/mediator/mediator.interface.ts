@@ -1,4 +1,4 @@
-import Broker from "./broker.abstract"
+import Broker from "../models/broker/broker.abstract"
 
 export default interface IMediator {
     notifySaleOffer(stockSymbol: string, shares: number, brokerCode: number): void

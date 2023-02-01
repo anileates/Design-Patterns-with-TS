@@ -1,5 +1,5 @@
 import Broker from "./broker.abstract";
-import IMediator from "./mediator.interface";
+import IMediator from "../../mediator/mediator.interface"
 
 class Broker2 extends Broker {
     constructor(mediator: IMediator) {
@@ -9,7 +9,7 @@ class Broker2 extends Broker {
     }
 
     saleOffer(stockSymbol: string, shares: number): void {
-        console.log('Requires $0.25 per share for selling ' + stockSymbol + ' shares'); // We can add some logic here
+        console.log('Broker 2 requires $0.25 per share for selling ' + stockSymbol + ' shares'); // We can add some logic here
         super.saleOffer(stockSymbol, shares);
     }
 }

@@ -1,6 +1,6 @@
-import Broker from "./broker.abstract";
+import Broker from "../models/broker/broker.abstract";
 import IMediator from "./mediator.interface";
-import Stock from "./stock.model";
+import Stock from "../models/stock.model";
 import chalk from "chalk";
 
 class StockMediator implements IMediator {

@@ -1,8 +1,8 @@
-import Broker from "./broker.abstract";
-import Broker1 from "./broker1";
-import Broker2 from "./broker2";
-import IMediator from "./mediator.interface";
-import StockMediator from "./stockMediator";
+import Broker from "./models/broker/broker.abstract";
+import Broker1 from "./models/broker/broker1"
+import Broker2 from "./models/broker/broker2"
+import IMediator from "./mediator/mediator.interface";
+import StockMediator from "./mediator/stockMediator";
 
 class Main {
     public static main(): void {
