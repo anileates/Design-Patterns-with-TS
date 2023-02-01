@@ -1,9 +1,9 @@
 import TurnOffCommand from "./commands/turnOff.command";
 import TurnOnCommand from "./commands/turnOn.command";
 import TurnVolumeUpCommand from "./commands/turnVolumeUp.command";
-import DeviceButton from "./deviceButton";
-import Radio from "./radio";
-import TVRemote from "./tv/tvRemote";
+import DeviceButton from "./device/deviceButton";
+import Radio from "./device/radio/radio";
+import TVRemote from "./device/tv/tvRemote";
 
 class Main {
     public static main() {
@@ -13,8 +13,8 @@ class Main {
         // `TurnTVon` class contains the command to turn on the TV
         let turnTvOnCommand = new TurnOnCommand(television);
 
-        // We created the command and now pass it to the invoker, which is the DeviceButton in our case.
-        // Device Button gonna send the command to the receiver, which is the TV in our case.
+        // We created the command and now pass it to the invoker, which is the `DeviceButton` in our case.
+        // `DeviceButton` will send the command to the receiver, which is the TV in our case.
         let turnOnButton = new DeviceButton(turnTvOnCommand);
 
         // Press the button
@@ -34,7 +34,7 @@ class Main {
         new DeviceButton(new TurnVolumeUpCommand(television)).press();
 
         // ------------------------------
-        // Since we made it through `IElectronicDevice` interface, we can use the same commands for other devices.
+        // Since we made it through `IElectronicDevice` interface, we can use the same commands for other devices implement IElectronicDevice interface.
         new DeviceButton(new TurnOnCommand(new Radio())).press();
     }
 }

@@ -16,6 +16,7 @@ class Main {
         lamp.setCommand(new SwitchLightsCommand(lamp.getLight()))
         lamp.executeCommand()
         console.log(lamp.isLightOn())
-
     }
 }
+
+Main.main();

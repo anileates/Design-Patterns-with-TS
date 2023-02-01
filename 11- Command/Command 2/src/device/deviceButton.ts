@@ -1,4 +1,4 @@
-import ICommand from "./commands/command.interface";
+import ICommand from "../commands/command.interface";
 
 // Invoker class
 class DeviceButton {

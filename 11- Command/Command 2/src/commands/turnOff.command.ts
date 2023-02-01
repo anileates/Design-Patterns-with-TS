@@ -1,4 +1,4 @@
-import IElectronicDevice from "../device.interface";
+import IElectronicDevice from "../device/device.interface";
 import ICommand from "./command.interface";
 
 class TurnOffCommand implements ICommand {

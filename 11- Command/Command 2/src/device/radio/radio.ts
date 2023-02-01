@@ -1,4 +1,4 @@
-import IElectronicDevice from "./device.interface";
+import IElectronicDevice from "../device.interface";
 
 class Radio implements IElectronicDevice {
     private volume: number = 0;
