@@ -1,3 +1,7 @@
+/**
+ * A dummy class to represent a credit card
+ */
+
 export default class CreditCard {
     // Make these fields public for demo purposes
     public balance: number = 1000;

@@ -9,7 +9,6 @@ class Main {
 
         broker.addSubscriber(emailSender); // register the subscriber to the publisher
         broker.setStockPrice("AAPL", 132.35)
-
     }
 }
 

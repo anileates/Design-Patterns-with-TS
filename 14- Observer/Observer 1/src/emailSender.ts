@@ -2,7 +2,7 @@ import { Event } from "./event.enum";
 import IStockObserver from "./stockObserver.interface";
 
 /**
- * This class sends email notifications to the customers when a stocks price changes
+ * This class sends email notifications to the customers when a stocks price changes.
  */
 class EmailSender implements IStockObserver {
     private customerEmails: string[] = [

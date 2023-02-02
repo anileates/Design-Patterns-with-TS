@@ -1,4 +1,4 @@
-import CreditCard from "./creditCard";
+import CreditCard from "../creditCard";
 import IPaymentStrategy from "./strategy.interface";
 
 export default class CreditCardPayment implements IPaymentStrategy {
